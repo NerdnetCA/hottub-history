@@ -15,6 +15,5 @@ app = tub.AppRoot()
 # Wrap the app instance appropriately to be dispatched by our
 # web server.  The server expects us to set a variable
 # named 'application'
-application = config.app_init( app , config.FILEROOT)
-
+application = config.app_init( app )
 # Done.

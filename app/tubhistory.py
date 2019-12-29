@@ -21,14 +21,17 @@ class AppRoot(object):
 
     @cherrypy.expose()
     #@lib.templater.Templater('start.xml')
-    def index(self):
+    def index(self, *args, **kws):
         """Main entrypoint - this is where users are expected to begin
         their interaction with the app.
 
         :return: the application, rendered as HTML 5
         """
-        return '<b>tubhistory.index</b>'
+        return str('<b>tubhistory.index</b><a href="{0}">netsr</a>'.format(config.PREFIXPATH))
 
+    @cherrypy.expose()
+    def default(self, *args, **kws):
+        return args[0]
 
 # If this file is executed directly by the interpreter
 # (e.g. by entering "python tubhistory.py"), then start

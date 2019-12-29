@@ -12,6 +12,8 @@ CODEPATH = os.path.join(FILEROOT,'app')
 LIBPATH = os.path.join(FILEROOT,'lib')
 TEMPLATEPATH = os.path.join(FILEROOT,'templates')
 
+PREFIXPATH = '/tub'
+
 if CODEPATH not in sys.path:
     sys.path.append(CODEPATH)
 if LIBPATH not in sys.path:
@@ -34,4 +36,4 @@ CHERRYCONFIG = {
     }
 
 def app_init( instance ):
-    return cherrypy.Application(instance, script_name=None, config=CHERRYCONFIG)
+    return cherrypy.Application(instance, script_name=PREFIXPATH, config=CHERRYCONFIG)
