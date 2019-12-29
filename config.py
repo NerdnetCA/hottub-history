@@ -10,6 +10,7 @@ FILEROOT = os.path.dirname(__file__)
 
 CODEPATH = os.path.join(FILEROOT,'app')
 LIBPATH = os.path.join(FILEROOT,'lib')
+TEMPLATEPATH = os.path.join(FILEROOT,'templates')
 
 if CODEPATH not in sys.path:
     sys.path.append(CODEPATH)
